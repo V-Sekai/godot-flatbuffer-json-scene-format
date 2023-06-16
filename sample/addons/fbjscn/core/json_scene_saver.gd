@@ -5,8 +5,17 @@ class_name JsonSceneSaver
 func _get_recognized_extensions(resource: Resource) -> PackedStringArray:
 	return ["fbjscn"]
 
+
 func _recognize(resource: Resource) -> bool:
 	return resource is PackedScene
+
+
+func _save(resource: Resource, path: String, flags: int) -> Error:
+	if not _recognize(resource):
+		return ERR_UNAVAILABLE
+
+	_save_jscn(resource, path, flags)
+	return OK
 
 
 func _find_resources(value:Variant) -> Array[Variant]:
@@ -42,6 +51,7 @@ func _save_jscn(resource: Resource, path: String, flags: int) -> void:
 
 	var file:FileAccess = FileAccess.open(path, FileAccess.WRITE)
 	file.store_string(JSON.stringify(jsonScene, "  ", false))
+	print(file)
 
 func _scene_state_to_json(state:SceneState, json:Dictionary) -> void:
 	var all_nodes:Array[Dictionary] = []
