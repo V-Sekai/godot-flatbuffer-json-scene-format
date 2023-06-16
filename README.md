@@ -66,12 +66,8 @@ Use `fbjscn` and `fbjres` as the extensions.
 
 ### Converting JSON to Godot Types With FlatBuffers
 
-Converting JSON to Godot types using FlatBuffers can be beneficial due to several reasons:
+**Error handling**: Handling errors during JSON parsing can be challenging, as it may require implementing custom error handling logic. FlatBuffers provide built-in error handling mechanisms, making it easier to detect and handle issues during the conversion process.
 
-1. **Memory usage**: JSON parsing typically requires creating intermediate data structures, which can lead to increased memory usage. FlatBuffers allow for direct access to serialized data without the need for additional data structures, reducing memory overhead.
-
-2. **Error handling**: Handling errors during JSON parsing can be challenging, as it may require implementing custom error handling logic. FlatBuffers provide built-in error handling mechanisms, making it easier to detect and handle issues during the conversion process.
-
-3. **Type safety**: JSON data is loosely typed, which can lead to type-related issues when converting it to Godot types. FlatBuffers enforce strict typing, ensuring that the resulting Godot types have the correct types and reducing the likelihood of runtime errors.
+**Type safety**: JSON data is loosely typed, which can lead to type-related issues when converting it to Godot types. FlatBuffers enforce strict typing, ensuring that the resulting Godot types have the correct types and reducing the likelihood of runtime errors.
 
 By using FlatBuffer-based JSON serialization, these difficulties can be mitigated, providing a more efficient and reliable way to convert JSON data to Godot types.
