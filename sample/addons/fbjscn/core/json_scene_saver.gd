@@ -3,7 +3,7 @@ extends ResourceFormatSaver
 class_name JsonSceneSaver
 
 func _get_recognized_extensions(resource: Resource) -> PackedStringArray:
-	return ["jscn"]
+	return ["fbjscn"]
 
 func _recognize(resource: Resource) -> bool:
 	return resource is PackedScene

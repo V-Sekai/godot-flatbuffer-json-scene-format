@@ -10,7 +10,7 @@ func _rename_dependencies(path: String, renames: Dictionary) -> Error:
 	return OK
 
 func _get_recognized_extensions() -> PackedStringArray:
-	return ["jscn", "tres", "escn"]
+	return ["fbjscn", "tres", "escn"]
 
 func _get_classes_used(path: String) -> PackedStringArray:
 	print("_get_classes_used %s" % path)
