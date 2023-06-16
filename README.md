@@ -45,3 +45,7 @@ To fix these problems, it would be good for Godot to support other easy-to-read 
 This feature should be part of the main engine to make sure it has official support and works well together.
 
 Use `fbjscn` and `fbjres` as the extensions.
+
+### Open problem
+
+1. How do we not create yet another format?
