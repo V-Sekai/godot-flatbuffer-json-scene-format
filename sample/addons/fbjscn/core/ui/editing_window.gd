@@ -6,23 +6,8 @@ enum {
 	EDITING_HINT_NO_HINT = 0,
 	EDITING_HINT_CONNECTION_FLAGS = 2
 }
-#------------------------------------------
-# Signaux
-#------------------------------------------
 
 signal on_close(is_validation:bool, value:Variant)
-
-#------------------------------------------
-# Exports
-#------------------------------------------
-
-#------------------------------------------
-# Variables publiques
-#------------------------------------------
-
-#------------------------------------------
-# Variables privées
-#------------------------------------------
 
 @onready var _background_color:ColorRect = %BackgroundColor
 @onready var _control_panel:Control = %ControlPanel
@@ -33,17 +18,9 @@ var _tree_item_factory:TreeItemFactory = TreeItemFactory.new()
 var _editor_theme:Theme
 var _edition_control:EditionControl
 
-#------------------------------------------
-# Fonctions Godot redéfinies
-#------------------------------------------
-
 func _ready() -> void:
 	_editor_theme = Engine.get_meta("godot_editor_theme")
 	_background_color.color = _editor_theme.get_color("background", "Editor")
-
-#------------------------------------------
-# Fonctions publiques
-#------------------------------------------
 
 func edit(title:String, value:Variant, hint:int = EDITING_HINT_NO_HINT) -> void:
 	_type_title.text = title
@@ -52,10 +29,6 @@ func edit(title:String, value:Variant, hint:int = EDITING_HINT_NO_HINT) -> void:
 	if _edition_control != null:
 		_control_panel.add_child(_edition_control.get_control())
 	child_controls_changed()
-
-#------------------------------------------
-# Fonctions privées
-#------------------------------------------
 
 func _get_edition_control(value:Variant, hint:int = EDITING_HINT_NO_HINT) -> EditionControl:
 	if hint == EDITING_HINT_CONNECTION_FLAGS:

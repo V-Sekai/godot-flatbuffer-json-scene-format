@@ -1,28 +1,8 @@
 extends RefCounted
 class_name TreeItemMetadata
 
-#------------------------------------------
-# Signaux
-#------------------------------------------
-
-#------------------------------------------
-# Exports
-#------------------------------------------
-
-#------------------------------------------
-# Variables publiques
-#------------------------------------------
-
 var metadata:Variant
 var context:int
-
-#------------------------------------------
-# Variables privées
-#------------------------------------------
-
-#------------------------------------------
-# Fonctions Godot redéfinies
-#------------------------------------------
 
 func _init(the_tree_item:TreeItem, the_metadata:Variant, the_context:int = -1) -> void:
 	metadata = the_metadata
@@ -41,11 +21,3 @@ func get_context_related_tree_items(ctx:int) -> Array[TreeItem]:
 			if item.get_metadata(0).context == ctx:
 				items.append(item)
 	return items
-#------------------------------------------
-# Fonctions publiques
-#------------------------------------------
-
-#------------------------------------------
-# Fonctions privées
-#------------------------------------------
-

@@ -2,24 +2,7 @@
 extends Window
 class_name ConflictingWindow
 
-#------------------------------------------
-# Signaux
-#------------------------------------------
-
-#------------------------------------------
-# Exports
-#------------------------------------------
-
-#------------------------------------------
-# Variables publiques
-#------------------------------------------
-
 var conflicting_scene:ConflictingScene
-
-#------------------------------------------
-# Variables privées
-#------------------------------------------
-
 
 var _tree_item_factory:TreeItemFactory = TreeItemFactory.new()
 var _diff_manager:JsonSceneDiffManager = JsonSceneDiffManager.new()
@@ -34,10 +17,6 @@ var _total_treated_merge:int
 @onready var merged_tree:Tree = %MergedTree
 @onready var _conflict_label:Label = %ConflictsLabel
 @onready var _merge_button:Button = %MergeButton
-
-#------------------------------------------
-# Fonctions Godot redéfinies
-#------------------------------------------
 
 func _ready() -> void:
 	var jscene_local:JSceneNode = JSceneConverter.to_jscene_node(conflicting_scene.json_scene_local)
@@ -229,14 +208,6 @@ func _recursive_display_scene_diff(tree:Tree, jscene_diff:JSceneNodeDiff, parent
 	# Handle children (recursion)
 	for child in jscene_diff.children:
 		_recursive_display_scene_diff(tree, child, node_item)
-
-#------------------------------------------
-# Fonctions publiques
-#------------------------------------------
-
-#------------------------------------------
-# Fonctions privées
-#------------------------------------------
 
 func _on_merged_tree_button_clicked(item: TreeItem, column: int, id: int, mouse_button_index: int) -> void:
 	var merge_info = item.get_metadata(0).metadata

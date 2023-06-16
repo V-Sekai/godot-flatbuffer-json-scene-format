@@ -1,26 +1,6 @@
 @tool
 extends Tree
 
-#------------------------------------------
-# Signaux
-#------------------------------------------
-
-#------------------------------------------
-# Exports
-#------------------------------------------
-
-#------------------------------------------
-# Variables publiques
-#------------------------------------------
-
-#------------------------------------------
-# Variables privées
-#------------------------------------------
-
-#------------------------------------------
-# Fonctions Godot redéfinies
-#------------------------------------------
-
 func _get_drag_data(at_position: Vector2) -> Variant:
 	var selected_item:TreeItem = get_selected()
 	if selected_item != null and selected_item.has_meta("jscn_meta"):
@@ -38,12 +18,3 @@ func _get_drag_data(at_position: Vector2) -> Variant:
 
 func _can_drop_data(at_position: Vector2, data) -> bool:
 	return false
-
-#------------------------------------------
-# Fonctions publiques
-#------------------------------------------
-
-#------------------------------------------
-# Fonctions privées
-#------------------------------------------
-

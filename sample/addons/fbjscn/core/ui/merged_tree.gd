@@ -4,32 +4,9 @@ extends Tree
 const HOVER_COLOR_LOCAL_REMOTE:Color = Color("#E5E7E9", 0.2)
 const HOVER_COLOR_MERGED:Color = Color("#5DADE2", 0.2)
 
-#------------------------------------------
-# Signaux
-#------------------------------------------
-
-#------------------------------------------
-# Exports
-#------------------------------------------
-
-#------------------------------------------
-# Variables publiques
-#------------------------------------------
-
-#------------------------------------------
-# Variables privées
-#------------------------------------------
-
 var _tree_item_factory:TreeItemFactory = TreeItemFactory.new()
 var _hovered_item:TreeItem
 var _hovered_item_original_bg_color
-#------------------------------------------
-# Fonctions Godot redéfinies
-#------------------------------------------
-
-#func _ready() -> void:
-#    button_clicked.connect(_on_button_clicked)
-#    item_activated.connect(_on_item_activated)
 
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -138,41 +115,6 @@ func _set_background_of_related_tree_items(metadata:TreeItemMetadata) -> void:
 					item.set_custom_bg_color(0, HOVER_COLOR_LOCAL_REMOTE)
 					item.get_tree().scroll_to_item(item, true)
 
-#
-#func _can_drop_data(at_position: Vector2, data) -> bool:
-#    var to_item:TreeItem = get_item_at_position(at_position)
-#    var can_drop:bool = false
-#    if to_item == null:
-#        can_drop = true
-#    else:
-#        if data is Dictionary and data.has("type") and to_item.has_meta("jscn_meta"):
-#            can_drop = to_item.get_meta("jscn_meta")["type"] == "node"
-#    return can_drop
-#
-#func _drop_data(at_position: Vector2, data) -> void:
-#    var to_item = get_item_at_position(at_position)
-#    var shift = get_drop_section_at_position(at_position)
-#
-#    var metadata:Dictionary = data as Dictionary
-#    if shift == -1:
-#        _create_item_from_metadata(metadata, to_item.get_parent(), to_item.get_index())
-#    elif shift == 0:
-#        _create_item_from_metadata(metadata, to_item)
-#    elif shift == 1:
-#        _create_item_from_metadata(metadata, to_item.get_parent(), to_item.get_index() + 1)
-#    else:
-#        _create_item_from_metadata(metadata, get_root())
-#
-#
-#func _create_item_from_metadata(metadata:Dictionary, parent_item:TreeItem, index:int = -1) -> void:
-#    var item:TreeItem
-#    if metadata["type"] == "node":
-#        item = _tree_item_factory.create_tree_item(self, parent_item, metadata["node_name"], metadata["node"], false, index)
-#    if metadata["type"] == "group":
-#        item = _tree_item_factory.create_raw_node_group_tree_item(self, metadata["group_name"], parent_item, index)
-#    if metadata["type"] == "property":
-#        item =_tree_item_factory.create_raw_node_property_tree_item(self, metadata["property_name"], metadata["property_value"], parent_item, index)
-
 func _on_button_clicked(item:TreeItem, column:int, id:int, mouse_button_index:int) -> void:
 	item.free()
 
@@ -180,11 +122,3 @@ func _on_item_activated() -> void:
 	var item:TreeItem = get_selected()
 	if item:
 		item.collapsed = !item.collapsed
-#------------------------------------------
-# Fonctions publiques
-#------------------------------------------
-
-#------------------------------------------
-# Fonctions privées
-#------------------------------------------
-
