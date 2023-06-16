@@ -51,12 +51,12 @@ func _load(path: String, original_path: String, use_sub_threads: bool, cache_mod
 	_connect_signals(root, root)
 	root.print_tree_pretty()
 	packedScene.pack(root)
-	packedScene.set_meta("jscn_loaded", true)
+	packedScene.set_meta("fbjscn_loaded", true)
 	return packedScene
 
 func _connect_signals(root:Node, node:Node) -> void:
-	var json_node:Dictionary = node.get_meta("jscnraw")
-	node.remove_meta("jscnraw")
+	var json_node:Dictionary = node.get_meta("fbjscnraw")
+	node.remove_meta("fbjscnraw")
 	if json_node.has("connections"):
 		for connection in json_node["connections"]:
 			var target_node_path:NodePath = NodePath(connection["target_path"])
@@ -94,7 +94,7 @@ func _create_node(node_name:String, json_node:Dictionary, owner_node:Node = null
 	else:
 		owner_node = node
 
-	node.set_meta("jscnraw", json_node)
+	node.set_meta("fbjscnraw", json_node)
 
 	if json_node.has("groups"):
 		for group in json_node["groups"]:
