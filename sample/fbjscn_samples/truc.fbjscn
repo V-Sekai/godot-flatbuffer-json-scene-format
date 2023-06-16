@@ -18,7 +18,7 @@
 <<<<<<< HEAD
 =======
       "properties": {
-        "script": "Resource(\"res://addons/jscn/truc.gd\")"
+        "script": "Resource(\"res://addons/fbjscn/truc.gd\")"
       },
 >>>>>>> new_branch_to_merge_later
       "children": {
@@ -60,7 +60,7 @@
 >>>>>>> new_branch_to_merge_later
               "type": "Label",
               "properties": {
-                "script": "Resource(\"res://addons/jscn/Label2.gd\")",
+                "script": "Resource(\"res://addons/fbjscn/Label2.gd\")",
                 "rect": "Rect2(1, 2, 3, 4)",
                 "vector4": "Vector4(5, 0, 0, 0)",
                 "transform2D": "Transform2D(1, 8, 0, 1, 0, 0)",

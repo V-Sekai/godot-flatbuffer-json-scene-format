@@ -18,7 +18,7 @@ func _get_classes_used(path: String) -> PackedStringArray:
 
 func _get_dependencies(path: String, add_types: bool) -> PackedStringArray:
 	print("_get_dependencies %s %s" % [path, add_types])
-	if path.ends_with(".jscn"):
+	if path.ends_with(".fbjscn"):
 		var json_scene:Dictionary = JSON.parse_string(FileAccess.get_file_as_string(path))
 		var tree_root:Dictionary = json_scene["tree"][json_scene["tree"].keys()[0]]
 		if tree_root.has("properties") and tree_root["properties"].has("script"):
@@ -27,7 +27,7 @@ func _get_dependencies(path: String, add_types: bool) -> PackedStringArray:
 
 func _get_resource_script_class(path: String) -> String:
 	print("_get_resource_script_class %s" % [path])
-	if path.ends_with(".jscn"):
+	if path.ends_with(".fbjscn"):
 		var json_scene:Dictionary = JSON.parse_string(FileAccess.get_file_as_string(path))
 		var tree_root:Dictionary = json_scene["tree"][json_scene["tree"].keys()[0]]
 		if tree_root.has("properties") and tree_root["properties"].has("script"):
@@ -126,7 +126,7 @@ func _handles_type(type: StringName) -> bool:
 
 func _get_resource_type(path: String) -> String:
 	var can_handle:bool = false
-	if path.ends_with(".tres") or path.ends_with(".jscn") or path.ends_with(".escn"):
+	if path.ends_with(".tres") or path.ends_with(".fbjscn") or path.ends_with(".escn"):
 		can_handle = true
 	print("can_handle %s: %s" % [path, can_handle])
 	return "PackedScene" if can_handle else ""
