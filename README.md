@@ -2,6 +2,16 @@
 
 [![Discord Banner](https://discordapp.com/api/guilds/1067685170397855754/widget.png?style=banner2)](https://discord.gg/SWg6vgcw3F)
 
+## Table of Contents
+
+- [Primary Problem: Merging Scenes in Collaborative Projects](#primary-problem-merging-scenes-in-collaborative-projects)
+- [Solution: Integrate a Merge Scene Tool in Godot Editor](#solution-integrate-a-merge-scene-tool-in-godot-editor)
+  - [FlatBuffer-based JSON Serialization for Merge Tool State](#flatbuffer-based-json-serialization-for-merge-tool-state)
+- [Reason for Core Integration for Merge Tool](#reason-for-core-integration-for-merge-tool)
+- [FlatBuffer-based JSON Scene File Format](#flatbuffer-based-json-scene-file-format)
+  - [Solution: Use FlatBuffer-based JSON as Another Easy-to-Read File Format](#solution-use-flatbuffer-based-json-as-another-easy-to-read-file-format)
+- [Open problems](#open-problems)
+
 ## Primary Problem: Merging Scenes in Collaborative Projects
 
 In collaborative projects, team members may edit the same scene in different ways. Version control systems (VCS) like Git can help manage these modifications through merging. However, merging scenes (TSCN format) can be challenging due to their complex semantics and potential for corruption.
@@ -30,22 +40,18 @@ FlatBuffer-based JSON is easy to read by tools and people, so developers can und
 
 The `fbjscn` format helps people work together on projects by making it easier to use tools like Git. This makes merging scenes in group projects simpler and lowers the chance of scene corruption.
 
-When working on a project related to Godot, like making games or add-ons, you might find problems with the current scene file formats (escn, scn, tscn):
+When working on a project related to Godot, like making games or add-ons, you might encounter problems with the current scene file formats (escn, scn, tscn):
 
 - **escn**: For scenes made by other tools (like importing from Blender)
 - **scn**: Binary format, small but not very helpful when working together on a project
 - **tscn**: Text format, INI/TOML-like syntax, easy to read, and good to use
 
-The TSCN format is special and not used a lot, causing issues like trouble editing scenes outside of the Godot Editor and not having helpful tools like linters or syntax checkers.
+The TSCN format is special and not used a lot, causing issues such as difficulty editing scenes outside of the Godot Editor and lacking helpful tools like linters or syntax checkers.
 
 ### Solution: Use FlatBuffer-based JSON as Another Easy-to-Read File Format
 
-To fix these problems, it would be good for Godot to support other easy-to-read file formats, like FlatBuffer-based JSON. FlatBuffers are a faster way to change data into a different form compared to normal JSON while still being easy to read.
+To fix these problems, it would be beneficial for Godot to support other easy-to-read file formats, like FlatBuffer-based JSON. FlatBuffers are a faster way to convert data into a different form compared to normal JSON while still being easy to read.
 
-This feature should be part of the main engine to make sure it has official support and works well together.
+This feature should be part of the main engine to ensure it has official support and works well together.
 
 Use `fbjscn` and `fbjres` as the extensions.
-
-### Open problem
-
-1. How do we not create yet another format?
