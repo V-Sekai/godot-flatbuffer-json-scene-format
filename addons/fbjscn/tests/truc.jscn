@@ -1,0 +1,211 @@
+{
+  "version": 1,
+  "tree": {
+    "Root": {
+<<<<<<< HEAD
+      "type": "Node2D",
+=======
+      "type": "Node",
+>>>>>>> new_branch_to_merge_later
+      "groups": [
+<<<<<<< HEAD
+        "g1"
+=======
+        "g2",
+        "g1"
+>>>>>>> new_branch_to_merge_later
+      ],
+<<<<<<< HEAD
+=======
+      "properties": {
+        "script": "Resource(\"res://addons/jscn/truc.gd\")"
+      },
+>>>>>>> new_branch_to_merge_later
+      "children": {
+        "Node2D": {
+<<<<<<< HEAD
+          "type": "Node",
+          "connections": [
+            {
+              "signal": "child_entered_tree",
+              "flags": 6,
+              "target_path": ".",
+              "target_method": "_on_node_2d_child_entered_tree",
+              "binds" : [ "\"Toto\"" , "Vector2(0.0, 1.75)" ]
+            }
+          ]
+=======
+          "type": "Node"
+>>>>>>> new_branch_to_merge_later
+        },
+        "test": {
+          "type": "Node",
+          "connections": [
+            {
+              "signal": "tree_entered",
+              "flags": 2,
+              "target_path": "./test/Label2",
+<<<<<<< HEAD
+              "target_method": "_on_test_tree_entered"
+=======
+              "target_method": "_on_test_tree_entered2"
+>>>>>>> new_branch_to_merge_later
+            }
+          ],
+          "children": {
+<<<<<<< HEAD
+            "Label2": {
+=======
+            "Label3": {
+>>>>>>> new_branch_to_merge_later
+              "type": "Label",
+              "properties": {
+                "script": "Resource(\"res://addons/jscn/Label2.gd\")",
+                "rect": "Rect2(1, 2, 3, 4)",
+                "vector4": "Vector4(5, 0, 0, 0)",
+                "transform2D": "Transform2D(1, 8, 0, 1, 0, 0)",
+                "stringname": "&\"fsdf\"",
+                "nodepath": "NodePath(\"Node2D\")",
+                "plane": "Plane(0, 0, 0, 9)",
+                "quater": "Quaternion(0, 0, 9, 1)",
+                "aabb": "AABB(7, 9, 0, 4, 0, 0)",
+                "basis": "Basis(1, 0, 0, 3, 1, 0, 0, 0, 1)",
+                "transform3d": "Transform3D(1, 0, 0, -6, 1, 0, 0, 0, 1, 0, 0, 0)",
+                "proj": "Projection(1, 0, 0, 0, 0, 1, 0, 0, 5, 0, 1, 0, 0, 0, 0, 1)",
+                "color": "Color(0.603922, 0.180392, 0.184314, 1)",
+                "array": "[\"fdjkfj\", 3]",
+                "dict": "{\n87: Vector2(6, 7)\n}",
+              },
+              "children": {
+                "Enfant1" : {
+                  "type" : "Node2D",
+                  "properties": {
+                    "position": "Vector2(50, 33)"
+                  }
+                },
+                "Enfant2" : {
+                  "type" : "Node2D"
+                },
+<<<<<<< HEAD
+                "Enfant3" : {
+                  "type" : "Node2D"
+=======
+                "Enfant3Bis" : {
+                  "type" : "Tree"
+>>>>>>> new_branch_to_merge_later
+                },
+                "Enfant4" : {
+                  "type" : "Node2D"
+                },
+                "Enfant5" : {
+                  "type" : "Node2D",
+                  "children": {
+                    "Enfant5-1": {
+                      "type" : "Node"
+                    },
+                    "Enfant5-2": {
+                      "type" : "Tree"
+                    },
+                    "Enfant5-3": {
+                      "type" : "Line2D"
+                    }
+                  }
+                },
+                "Enfant6" : {
+                  "type" : "Node2D"
+                },
+                "Enfant7" : {
+                  "type" : "Node2D"
+                }
+              }
+            },
+            "Label1": {
+              "type": "Label",
+              "properties": {
+<<<<<<< HEAD
+                "offset_right": "1.0",
+                "offset_bottom": "52.0",
+=======
+                "offset_left": "1.0",
+>>>>>>> new_branch_to_merge_later
+<<<<<<< HEAD
+                "text": "\"jE SUIS UN TEXTE\nmULTILIGNE\"",
+=======
+                "text": "\"jE SUIS UN TEXTE pas mULTILIGNE\"",
+>>>>>>> new_branch_to_merge_later
+                "clip_text": "true"
+              },
+              "connections": [
+                {
+                  "signal": "ready",
+                  "flags": 2,
+                  "target_path": ".",
+                  "target_method": "_on_label_ready",
+                  "binds": [
+                    "\"Truc\"",
+                    "Vector2(-0.056, 9)"
+                  ]
+                }
+              ],
+              "children": {
+                "Truc": {
+                  "type": "Node"
+                }
+              }
+            }
+          }
+        },
+        "Child": {
+          "type": "Node",
+          "groups": [
+            "c1"
+          ]
+        },
+<<<<<<< HEAD
+=======
+        "Child6": {
+          "type": "Node",
+          "groups": [
+            "c1"
+          ]
+        },
+>>>>>>> new_branch_to_merge_later
+<<<<<<< HEAD
+        "Child3": {
+            "type": "Node2D"
+=======
+        "Child2": {
+            "type": "Node",
+            "children" : {
+              "Child2-1": {
+                "type" : "Polygon2D"
+              }
+            }
+>>>>>>> new_branch_to_merge_later
+        },
+        "Child4": {
+          "type": "Node",
+          "groups": [
+            "c1"
+          ]
+        },
+        "Child5": {
+          "type": "Node",
+          "groups": [
+            "c1"
+          ]
+<<<<<<< HEAD
+        },
+        "Child6": {
+          "type": "Node",
+          "groups": [
+            "c1"
+          ]
+        }
+=======
+        }
+>>>>>>> new_branch_to_merge_later
+      }
+    }
+  }
+}

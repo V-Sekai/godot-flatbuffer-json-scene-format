@@ -1,0 +1,43 @@
+namespace FlatBufferJsonScene;
+
+table Resource {
+    resource_name: string;
+    resource_path: string;
+    resource_local_to_scene: bool;
+    source_code: string;
+}
+
+table Property {
+    name: string;
+    value: string;
+    resource: Resource;
+}
+
+table Connection {
+    signal: string;
+    flags: int;
+    target_path: string;
+    target_method: string;
+    binds: [string];
+    unbind: int;
+}
+
+table Node {
+    name: string;
+    type: string;
+    path: string;
+    groups: [string];
+    properties: [Property];
+    connections: [Connection];
+}
+
+table Tree {
+    nodes: [Node];
+}
+
+table SceneState {
+    version: int;
+    tree: Tree;
+}
+
+root_type SceneState;

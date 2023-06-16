@@ -1,0 +1,150 @@
+{
+  "version": 1,
+  "tree": {
+    "Root4": {
+      "type": "Node",
+      "groups": [
+        "g1",
+        "g2"
+      ],
+      "properties": {
+        "script": "Resource(\"res://addons/jscn/truc.gd\")",
+        "rect": "Rect2(1, 2, 3, 4)",
+        "vector4": "Vector4(5, 0, 0, 0)",
+        "transform2D": "Transform2D(1, 8, 0, 1, 0, 0)",
+        "stringname": "&\"fsdf\"",
+        "nodepath": "NodePath(\"Node2D\")",
+        "plane": "Plane(0, 0, 0, 9)",
+        "quater": "Quaternion(0, 0, 9, 1)",
+        "aabb": "AABB(7, 9, 0, 4, 0, 0)",
+        "basis": "Basis(1, 0, 0, 3, 1, 0, 0, 0, 1)",
+        "transform3d": "Transform3D(1, 0, 0, -6, 1, 0, 0, 0, 1, 0, 0, 0)",
+        "proj": "Projection(1, 0, 0, 0, 0, 1, 0, 0, 5, 0, 1, 0, 0, 0, 0, 1)",
+        "color": "Color(0.603922, 0.180392, 0.184314, 1)",
+        "dict": "{\n87: Vector2(6, 7)\n}",
+        "array": "[\"fdjkfj\", 3]"
+      },
+      "children": {
+        "Node2D": {
+          "type": "Node2D"
+        },
+        "test": {
+          "type": "Node",
+          "children": {
+            "Label3": {
+              "type": "Label",
+              "properties": {
+                "script": "Resource(\"res://addons/jscn/Label2.gd\")"
+              },
+              "connections": [
+               {
+                 "signal": "tree_entered",
+                 "flags": 2,
+                 "target_path": "./test/Label2",
+                 "target_method": "_on_test_tree_entered"
+               }
+             ],
+              "children": {
+                "Enfant1": {
+                  "type": "Node2D",
+                  "properties": {
+                    "position": "Vector2(50, 33)"
+                  }
+                },
+                "Enfant2": {
+                  "type": "Node2D"
+                },
+                "Enfant3Bis": {
+                  "type": "Tree",
+                  "properties": {
+                    "layout_mode": "0"
+                  }
+                },
+                "Enfant4": {
+                  "type": "Node2D"
+                },
+                "Enfant5": {
+                  "type": "Node2D",
+                  "children": {
+                    "Enfant5-1": {
+                      "type": "Node"
+                    },
+                    "Enfant5-2": {
+                      "type": "Tree"
+                    },
+                    "Enfant5-3": {
+                      "type": "Line2D"
+                    }
+                  }
+                },
+                "Enfant6": {
+                  "type": "Node2D"
+                },
+                "Enfant7": {
+                  "type": "Node2D"
+                }
+              }
+            },
+            "Label1": {
+              "type": "Label",
+              "properties": {
+                "offset_left": "1.0",
+                "text": "\"jE SUIS UN TEXTE\nmULTILIGNE\"",
+                "clip_text": "true"
+              },
+              "connections": [
+                {
+                  "signal": "ready",
+                  "flags": 2,
+                  "target_path": ".",
+                  "target_method": "_on_label_ready",
+                  "binds": [
+                    "\"Truc\"",
+                    "Vector2(-0.056, 9)"
+                  ]
+                }
+              ],
+              "children": {
+                "Truc": {
+                  "type": "Node"
+                }
+              }
+            }
+          }
+        },
+        "Child": {
+          "type": "Node",
+          "groups": [
+            "c1"
+          ]
+        },
+        "Child2": {
+          "type": "Node",
+          "children": {
+            "Child2-1": {
+              "type": "Polygon2D"
+            }
+          }
+        },
+        "Child4": {
+          "type": "Node",
+          "groups": [
+            "c1"
+          ]
+        },
+        "Child5": {
+          "type": "Node",
+          "groups": [
+            "c1"
+          ]
+        },
+        "Child6": {
+          "type": "Node",
+          "groups": [
+            "c1"
+          ]
+        }
+      }
+    }
+  }
+}
