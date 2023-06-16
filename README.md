@@ -55,3 +55,11 @@ To fix these problems, it would be beneficial for Godot to support other easy-to
 This feature should be part of the main engine to ensure it has official support and works well together.
 
 Use `fbjscn` and `fbjres` as the extensions.
+
+### Open problems
+
+1. How do we avoid creating yet another format that adds complexity to the ecosystem?
+
+   - One possible solution is to ensure that the new format is backward compatible with existing formats.
+   - Another approach is to provide clear documentation and tooling support to help developers transition smoothly between formats.
+   - Additionally, we can avoid exposing the internal format through the saver/loader system, keeping it hidden from users and only using it for specific purposes like merging scenes. This way, the complexity of managing multiple formats is reduced, and users can continue working with their preferred formats without being affected by the internal format.
