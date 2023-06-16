@@ -52,3 +52,5 @@ Use `fbjscn` and `fbjres` as the extensions.
    - Ensure the new format is backward compatible with existing formats.
    - Provide clear documentation and tooling support for smooth transitions between formats.
    - Avoid exposing the internal format through the saver/loader system, using it only for specific purposes like merging scenes, reducing complexity and allowing users to work with their preferred formats.
+
+1. Implement flatbuffer conversion rather than str_to_var.
