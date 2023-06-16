@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://"]
 
-[ext_resource type="Script" path="res://addons/fbjscn/ui/conflict_window.gd" id="1_rnch5"]
-[ext_resource type="Script" path="res://addons/fbjscn/ui/local_tree.gd" id="2_3mfop"]
-[ext_resource type="Script" path="res://addons/fbjscn/ui/merged_tree.gd" id="2_8avw3"]
+[ext_resource type="Script" path="res://addons/fbjscn/core/ui/conflict_window.gd" id="1_rnch5"]
+[ext_resource type="Script" path="res://addons/fbjscn/core/ui/local_tree.gd" id="2_3mfop"]
+[ext_resource type="Script" path="res://addons/fbjscn/core/ui/merged_tree.gd" id="2_8avw3"]
 
 [node name="ConflictWindow" type="Window"]
 initial_position = 2

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cx7dqqg0th1ys"]
 
-[ext_resource type="Script" path="res://addons/fbjscn/ui/editing_window.gd" id="1_7o6dv"]
+[ext_resource type="Script" path="res://addons/fbjscn/core/ui/editing_window.gd" id="1_7o6dv"]
 
 [node name="EditingWindow" type="Window"]
 initial_position = 2
