@@ -1,13 +1,13 @@
 extends Label
 
 func _ready() -> void:
-    pass
+	pass
 
 func _process(delta:float) -> void:
-    pass
+	pass
 
 func _physics_process(delta:float) -> void:
-    pass
+	pass
 
 #------------------------------------------
 # Fonctions publiques
@@ -20,4 +20,4 @@ func _physics_process(delta:float) -> void:
 
 
 func _on_test_tree_entered() -> void:
-    pass # Replace with function body.
+	pass # Replace with function body.

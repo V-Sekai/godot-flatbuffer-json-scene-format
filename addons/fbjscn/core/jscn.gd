@@ -22,4 +22,3 @@ func _exit_tree() -> void:
 	saver = null
 
 	Engine.remove_meta("godot_editor_theme")
-	get_editor_interface().get_resource_filesystem().scan()
