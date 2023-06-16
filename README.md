@@ -12,7 +12,6 @@
   - [FlatBuffer-based JSON Scene File Format](#flatbuffer-based-json-scene-file-format)
   - [Solution: Use FlatBuffer-based JSON as Another Easy-to-Read File Format](#solution-use-flatbuffer-based-json-as-another-easy-to-read-file-format)
   - [Open problems](#open-problems)
-  - [Converting JSON to Godot Types With FlatBuffers](#converting-json-to-godot-types-with-flatbuffers)
 
 ## Part 1: Merge Scene Tool
 
@@ -38,23 +37,11 @@ While this feature could be implemented as an add-on, a merge tool is a common f
 
 ### FlatBuffer-based JSON Scene File Format
 
-FlatBuffer-based JSON is easy to read by tools and people, so developers can understand and work with scene files outside of the Godot Editor.
-
-The `fbjscn` format helps people work together on projects by making it easier to use tools like Git. This makes merging scenes in group projects simpler and lowers the chance of scene corruption.
-
-When working on a project related to Godot, like making games or add-ons, you might encounter problems with the current scene file formats (escn, scn, tscn):
-
-- **escn**: For scenes made by other tools (like importing from Blender)
-- **scn**: Binary format, small but not very helpful when working together on a project
-- **tscn**: Text format, INI/TOML-like syntax, easy to read, and good to use
-
-The TSCN format is special and not used a lot, causing issues such as difficulty editing scenes outside of the Godot Editor and lacking helpful tools like linters or syntax checkers.
+FlatBuffer-based JSON is easy to read by tools and people, so developers can understand and work with scene files outside of the Godot Editor. The `fbjscn` format simplifies merging scenes in group projects and lowers the chance of scene corruption.
 
 ### Solution: Use FlatBuffer-based JSON as Another Easy-to-Read File Format
 
-To fix these problems, it would be beneficial for Godot to support other easy-to-read file formats, like FlatBuffer-based JSON. FlatBuffers are a faster way to convert data into a different form compared to normal JSON while still being easy to read.
-
-This feature should be part of the main engine to ensure it has official support and works well together.
+To address issues with the current scene file formats (escn, scn, tscn), Godot should support FlatBuffer-based JSON as another easy-to-read file format. FlatBuffers offer faster data conversion compared to normal JSON while maintaining readability. This feature should be part of the main engine to ensure official support and compatibility.
 
 Use `fbjscn` and `fbjres` as the extensions.
 
@@ -62,14 +49,6 @@ Use `fbjscn` and `fbjres` as the extensions.
 
 1. How do we avoid creating yet another format that adds complexity to the ecosystem?
 
-   - One possible solution is to ensure that the new format is backward compatible with existing formats.
-   - Another approach is to provide clear documentation and tooling support to help developers transition smoothly between formats.
-   - Additionally, we can avoid exposing the internal format through the saver/loader system, keeping it hidden from users and only using it for specific purposes like merging scenes. This way, the complexity of managing multiple formats is reduced, and users can continue working with their preferred formats without being affected by the internal format.
-
-### Converting JSON to Godot Types With FlatBuffers
-
-**Error handling**: Handling errors during JSON parsing can be challenging, as it may require implementing custom error handling logic. FlatBuffers provide built-in error handling mechanisms, making it easier to detect and handle issues during the conversion process.
-
-**Type safety**: JSON data is loosely typed, which can lead to type-related issues when converting it to Godot types. FlatBuffers enforce strict typing, ensuring that the resulting Godot types have the correct types and reducing the likelihood of runtime errors.
-
-By using FlatBuffer-based JSON serialization, these difficulties can be mitigated, providing a more efficient and reliable way to convert JSON data to Godot types.
+   - Ensure the new format is backward compatible with existing formats.
+   - Provide clear documentation and tooling support for smooth transitions between formats.
+   - Avoid exposing the internal format through the saver/loader system, using it only for specific purposes like merging scenes, reducing complexity and allowing users to work with their preferred formats.
