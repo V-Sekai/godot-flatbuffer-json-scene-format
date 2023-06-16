@@ -37,7 +37,7 @@ func _get_resource_script_class(path: String) -> String:
 func _load(path: String, original_path: String, use_sub_threads: bool, cache_mode: int) -> Variant:
 	print("_load %s %s" % [path, original_path])
 	if GitHelper.file_has_conflicts(path):
-		var popup:ConflictingWindow = preload("res://addons/fbjscn/ui/ConflictWindow.tscn").instantiate()
+		var popup:ConflictingWindow = preload("res://addons/fbjscn/scenes/conflict_window.tscn").instantiate()
 		popup.conflicting_scene = GitHelper.get_onflicting_scene(path)
 		Engine.get_main_loop().root.add_child(popup)
 		popup.popup_centered()

@@ -418,7 +418,7 @@ func _on_merged_tree_item_activated() -> void:
 					edition_value = metadata.get_displayed_unbinds()
 
 		if not edition_title.is_empty():
-			var popup:EditingWindow = preload("res://addons/fbjscn/ui/EditingWindow.tscn").instantiate()
+			var popup:EditingWindow = preload("res://addons/fbjscn/scenes/editing_window.tscn").instantiate()
 			add_child(popup)
 			popup.popup_centered()
 			popup.edit(edition_title, edition_value, edit_hint)
