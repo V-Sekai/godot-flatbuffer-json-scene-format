@@ -20,7 +20,7 @@ The merge tool should be intelligent enough to detect node movements, renaming, 
 
 To ensure efficient serialization of the internal state of the merge tool at the start, in between, and at the end, FlatBuffer-based JSON should be used. This will allow for faster processing and better performance while maintaining human-readability.
 
-## Reason for Core Integration
+## Reason for Core Integration for Merge Tool
 
 While this feature could be implemented as an add-on, a merge tool is a common feature in modern IDEs and should be fully integrated into the Godot Editor for a seamless user experience.
 
@@ -30,9 +30,7 @@ FlatBuffer-based JSON is easy to read by tools and people, so developers can und
 
 The `fbjscn` format helps people work together on projects by making it easier to use tools like Git. This makes merging scenes in group projects simpler and lowers the chance of scene corruption.
 
-When working on a project related to Godot, like making games or add-ons, you might find problems with the current scene file formats:
-
-Using FlatBuffer-based JSON as another file format gives developers more choices when working on Godot projects and solves some problems with current scene file formats (escn, scn, tscn).
+When working on a project related to Godot, like making games or add-ons, you might find problems with the current scene file formats (escn, scn, tscn):
 
 - **escn**: For scenes made by other tools (like importing from Blender)
 - **scn**: Binary format, small but not very helpful when working together on a project
