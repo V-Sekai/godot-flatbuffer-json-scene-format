@@ -1,0 +1,9 @@
+#!/usr/bin/env python
+
+Import('env')
+Import('env_modules')
+env_flexbuffer = env_modules.Clone()
+
+env_flexbuffer.Prepend(CPPPATH="thirdparty/flatbuffers/include")
+
+env_flexbuffer.add_source_files(env.modules_sources, "*.cpp")
