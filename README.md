@@ -2,6 +2,8 @@
 
 [![Discord Banner](https://discordapp.com/api/guilds/1067685170397855754/widget.png?style=banner2)](https://discord.gg/SWg6vgcw3F)
 
+**C++ Module WIP. See the gdscript sample.**
+
 ## Table of Contents
 
 - [Part 1: Merge Scene Tool](#part-1-merge-scene-tool)
