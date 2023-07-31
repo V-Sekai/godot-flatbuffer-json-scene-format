@@ -125,7 +125,7 @@ func _node_to_json(state:SceneState, node_index:int) -> Dictionary:
 	var property_count:int = state.get_node_property_count(node_index)
 	if property_count > 0:
 		json["properties"] = { }
-		for prop_index in property_count:
+		for prop_index in range(property_count):
 			var property_name:String = state.get_node_property_name(node_index, prop_index)
 			var property_value:Variant = state.get_node_property_value(node_index, prop_index)
 			if property_value is Resource:
