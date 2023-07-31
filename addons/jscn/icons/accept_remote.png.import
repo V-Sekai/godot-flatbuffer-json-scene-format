@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drgv73c7w46uu"
-path="res://.godot/imported/accept_icon.png-9442ebd261eb25be9992f3fed2a0d49d.ctex"
+uid="uid://cu8pa3pncg0wb"
+path="res://.godot/imported/accept_remote.png-95ec6c81fb431ead73a6d3e16697305b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/fbjscn/icons/accept_icon.png"
-dest_files=["res://.godot/imported/accept_icon.png-9442ebd261eb25be9992f3fed2a0d49d.ctex"]
+source_file="res://addons/jscn/icons/accept_remote.png"
+dest_files=["res://.godot/imported/accept_remote.png-95ec6c81fb431ead73a6d3e16697305b.ctex"]
 
 [params]
 

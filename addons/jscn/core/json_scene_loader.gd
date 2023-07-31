@@ -10,7 +10,7 @@ func _rename_dependencies(path: String, renames: Dictionary) -> Error:
 	return OK
 
 func _get_recognized_extensions() -> PackedStringArray:
-	return ["fbjscn", "tres", "escn"]
+	return ["jscn", "tres", "escn"]
 
 func _get_classes_used(path: String) -> PackedStringArray:
 	print("_get_classes_used %s" % path)
@@ -18,7 +18,7 @@ func _get_classes_used(path: String) -> PackedStringArray:
 
 func _get_dependencies(path: String, add_types: bool) -> PackedStringArray:
 	print("_get_dependencies %s %s" % [path, add_types])
-	if path.ends_with(".fbjscn"):
+	if path.ends_with(".jscn"):
 		var json_scene:Dictionary = JSON.parse_string(FileAccess.get_file_as_string(path))
 		var tree_root:Dictionary = json_scene["tree"][json_scene["tree"].keys()[0]]
 		if tree_root.has("properties") and tree_root["properties"].has("script"):
@@ -27,7 +27,7 @@ func _get_dependencies(path: String, add_types: bool) -> PackedStringArray:
 
 func _get_resource_script_class(path: String) -> String:
 	print("_get_resource_script_class %s" % [path])
-	if path.ends_with(".fbjscn"):
+	if path.ends_with(".jscn"):
 		var json_scene:Dictionary = JSON.parse_string(FileAccess.get_file_as_string(path))
 		var tree_root:Dictionary = json_scene["tree"][json_scene["tree"].keys()[0]]
 		if tree_root.has("properties") and tree_root["properties"].has("script"):
@@ -37,7 +37,7 @@ func _get_resource_script_class(path: String) -> String:
 func _load(path: String, original_path: String, use_sub_threads: bool, cache_mode: int) -> Variant:
 	print("_load %s %s" % [path, original_path])
 	if GitHelper.file_has_conflicts(path):
-		var popup:ConflictingWindow = preload("res://addons/fbjscn/scenes/conflict_window.tscn").instantiate()
+		var popup:ConflictingWindow = preload("res://addons/jscn/scenes/conflict_window.tscn").instantiate()
 		popup.conflicting_scene = GitHelper.get_onflicting_scene(path)
 		Engine.get_main_loop().root.add_child(popup)
 		popup.popup_centered()
@@ -126,7 +126,7 @@ func _handles_type(type: StringName) -> bool:
 
 func _get_resource_type(path: String) -> String:
 	var can_handle:bool = false
-	if path.ends_with(".tres") or path.ends_with(".fbjscn") or path.ends_with(".escn"):
+	if path.ends_with(".tres") or path.ends_with(".jscn") or path.ends_with(".escn"):
 		can_handle = true
 	print("can_handle %s: %s" % [path, can_handle])
 	return "PackedScene" if can_handle else ""

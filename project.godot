@@ -11,12 +11,12 @@ config_version=5
 [application]
 
 config/name="Test Rss Tscn"
-config/features=PackedStringArray("4.1", "Double Precision", "GL Compatibility")
+config/features=PackedStringArray("4.2", "Double Precision", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/fbjscn/plugin.cfg")
+enabled=PackedStringArray("res://addons/jscn/plugin.cfg")
 
 [rendering]
 
