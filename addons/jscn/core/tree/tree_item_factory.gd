@@ -22,7 +22,7 @@ func create_merge_tree_item(tree:Tree, parent_item:TreeItem, node_name:String, j
 
 func create_merged_node_tree_item(tree:Tree, node_name:String, json_node:Dictionary, parent_item:TreeItem, index:int = -1) -> TreeItem:
 	var item:TreeItem = create_raw_node_tree_item(tree, node_name, json_node["type"], parent_item, index)
-	item.set_meta("fbjscn_meta", {
+	item.set_meta("jscn_meta", {
 		"type" : "node",
 		"node_name" : node_name,
 		"node" : json_node
@@ -38,7 +38,7 @@ func create_merged_node_group_tree_items(tree:Tree, json_node:Dictionary, parent
 		json_node["groups"].sort()
 		for group_name in json_node["groups"]:
 			var item_group:TreeItem = create_raw_node_group_tree_item(tree, group_name, group_item)
-			item_group.set_meta("fbjscn_meta", {
+			item_group.set_meta("jscn_meta", {
 				"type" : "group",
 				"group_name" : group_name,
 			})
@@ -57,7 +57,7 @@ func create_merged_node_property_tree_items(tree:Tree, json_node:Dictionary, par
 
 		for prop_name in json_node["properties"]:
 			var item_prop:TreeItem = create_raw_node_property_tree_item(tree, prop_name, json_node["properties"][prop_name], properties_item)
-			item_prop.set_meta("fbjscn_meta", {
+			item_prop.set_meta("jscn_meta", {
 				"type" : "property",
 				"property_name" : prop_name,
 				"property_value" : json_node["properties"][prop_name]
@@ -81,7 +81,7 @@ func create_tree_item(tree:Tree, parent_item:TreeItem, node_name:String, json_no
 
 func create_node_tree_item(tree:Tree, node_name:String, json_node:Dictionary, parent_item:TreeItem, is_local_ref:bool, index:int = -1) -> TreeItem:
 	var item:TreeItem = create_raw_node_tree_item(tree, node_name, json_node["type"], parent_item, index)
-	item.set_meta("fbjscn_meta", {
+	item.set_meta("jscn_meta", {
 		"type" : "node",
 		"node_name" : node_name,
 		"node" : json_node
@@ -118,7 +118,7 @@ func create_node_group_tree_items(tree:Tree, json_node:Dictionary, parent_item:T
 
 			for group_report in group_diff_report.group_reports:
 				var item_group:TreeItem = create_raw_node_group_tree_item(tree, group_report.group_name, group_item)
-				item_group.set_meta("fbjscn_meta", {
+				item_group.set_meta("jscn_meta", {
 					"type" : "group",
 					"group_name" : group_report.group_name,
 				})
@@ -144,7 +144,7 @@ func create_node_property_tree_items(tree:Tree, json_node:Dictionary, parent_ite
 
 			for prop_report in property_diff_report.property_reports:
 				var item_prop:TreeItem = create_raw_node_property_tree_item(tree, prop_report.property_name, prop_report.property_value, properties_item)
-				item_prop.set_meta("fbjscn_meta", {
+				item_prop.set_meta("jscn_meta", {
 					"type" : "property",
 					"property_name" : prop_report.property_name,
 					"property_value" : prop_report.property_value,
